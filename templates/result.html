@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System - Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa; /* Light cyan background color */
+            background-image: url('/static/background.jpg'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for the container */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #00796b; /* Teal color for heading */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #00796b; /* Teal color for table headers */
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Your Song Recommendations</h1>
+
+        {% if recommendations is not none %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Track Name</th>
+                    <th>Artist</th>
+                    <th>Popularity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for _, row in recommendations.iterrows() %}
+                <tr>
+                    <td>{{ row['track_name'] }}</td>
+                    <td>{{ row['track_artist'] }}</td>
+                    <td>{{ row['track_popularity'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No recommendations available. Please try again with different inputs.</p>
+        {% endif %}
+        
+        <div class="text-center mt-4">
+            <a href="/" class="btn">Back to Input</a>
+        </div>
+    </div>
+</body>
+</html>

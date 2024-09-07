@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System - Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa; /* Light cyan background color */
+            background-image: url('/static/background.jpg'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for the container */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #00796b; /* Teal color for heading */
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group select {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Recommendation System</h1>
+        <form method="POST" action="/recommendations">
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre">
+                    <option value="">Select a genre</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Electronic">Electronic</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Country">Country</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Classical">Classical</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Reggae">Reggae</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="artist">Artist:</label>
+                <select id="artist" name="artist">
+                    <option value="">Select an artist</option>
+                    <option value="Ed Sheeran">Ed Sheeran</option>
+                    <option value="Maroon 5">Maroon 5</option>
+                    <option value="Zara Larsson">Zara Larsson</option>
+                    <option value="The Chainsmokers">The Chainsmokers</option>
+                    <option value="Lewis Capaldi">Lewis Capaldi</option>
+                    <option value="Katy Perry">Katy Perry</option>
+                    <option value="Sam Feldt">Sam Feldt</option>
+                    <option value="Avicii">Avicii</option>
+                    <option value="Shawn Mendes">Shawn Mendes</option>
+                    <option value="Ellie Goulding">Ellie Goulding</option>
+                    <option value="Loud Luxury">Loud Luxury</option>
+                    <option value="Martin Garrix">Martin Garrix</option>
+                    <option value="AJ Mitchell">AJ Mitchell</option>
+                    <option value="David Guetta">David Guetta</option>
+                    <option value="Sam Smith">Sam Smith</option>
+                    <option value="Steve Aoki">Steve Aoki</option>
+                    <option value="R3HAB">R3HAB</option>
+                    <option value="Marshmello">Marshmello</option>
+                    <option value="Ava Max">Ava Max</option>
+                    <option value="Nikki Vianna">Nikki Vianna</option>
+                    <option value="Charlie Puth">Charlie Puth</option>
+                    <option value="Starley">Starley</option>
+                    <option value="James Arthur">James Arthur</option>
+                    <option value="MAX">MAX</option>
+                    <option value="ILLENIUM">ILLENIUM</option>
+                    <option value="Bazzi vs.">Bazzi vs.</option>
+                    <option value="Charli XCX">Charli XCX</option>
+                    <option value="Kygo">Kygo</option>
+                    <option value="Armin van Buuren">Armin van Buuren</option>
+                    <option value="Billie Eilish">Billie Eilish</option>
+                    <option value="Sia">Sia</option>
+                    <option value="Sean Paul">Sean Paul</option>
+                    <option value="Estelle">Estelle</option>
+                    <option value="Bastille">Bastille</option>
+                    <option value="for KING & COUNTRY">for KING & COUNTRY</option>
+                    <option value="Lil Nas X">Lil Nas X</option>
+                    <option value="Calvin Harris">Calvin Harris</option>
+                    <option value="Why Don't We">Why Don't We</option>
+                    <option value="Olympis">Olympis</option>
+                    <option value="DJ Snake">DJ Snake</option>
+                    <option value="Smash Mouth">Smash Mouth</option>
+                    <option value="SHAED">SHAED</option>
+                    <option value="GASHI">GASHI</option>
+                    <option value="Khalid">Khalid</option>
+                    <option value="Herve Pagez">Herve Pagez</option>
+                    <option value="Mark Ronson">Mark Ronson</option>
+                    <option value="Arlissa">Arlissa</option>
+                    <option value="Gryffin">Gryffin</option>
+                    <option value="NOTD">NOTD</option>
+                    <option value="5 Seconds of Summer">5 Seconds of Summer</option>
+                    <option value="Jonas Blue">Jonas Blue</option>
+                    <option value="Jax Jones">Jax Jones</option>
+                    <option value="Zedd">Zedd</option>
+                    <option value="Mabel">Mabel</option>
+                    <option value="A R I Z O N A">A R I Z O N A</option>
+                    <option value="ayokay">ayokay</option>
+                    <option value="ARTY">ARTY</option>
+                    <option value="Maggie Lindemann">Maggie Lindemann</option>
+                    <option value="Cashae">Cashae</option>
+                    <option value="Galantis">Galantis</option>
+                    <option value="Carly Rae Jepsen">Carly Rae Jepsen</option>
+                    <option value="Tiësto">Tiësto</option>
+                    <option value="Silk City">Silk City</option>
+                    <option value="Shallou">Shallou</option>
+                    <option value="benny blanco">benny blanco</option>
+                    <option value="DVBBS">DVBBS</option>
+                    <option value="Lost Kings">Lost Kings</option>
+                    <option value="Elderbrook">Elderbrook</option>
+                    <option value="Joel Corry">Joel Corry</option>
+                    <option value="Lindsey Stirling">Lindsey Stirling</option>
+                    <option value="Disclosure">Disclosure</option>
+                    <option value="San Holo">San Holo</option>
+                    <option value="The Black Eyed Peas">The Black Eyed Peas</option>
+                    <option value="Riton">Riton</option>
+                    <option value="Dynoro">Dynoro</option>
+                    <option value="Skrillex">Skrillex</option>
+                    <option value="J Balvin">J Balvin</option>
+                    <option value="Swedish House Mafia">Swedish House Mafia</option>
+                    <option value="Justin Timberlake">Justin Timberlake</option>
+                    <option value="Lady Gaga">Lady Gaga</option>
+                    <option value="Robin Schulz">Robin Schulz</option>
+                    <option value="Sigala">Sigala</option>
+                    <option value="Hot Shade">Hot Shade</option>
+                    <option value="Paul Kalkbrenner">Paul Kalkbrenner</option>
+                    <option value="MOTi">MOTi</option>
+                    <option value="Dimitri Vegas & Like Mike">Dimitri Vegas & Like Mike</option>
+                    <option value="Becky Hill">Becky Hill</option>
+                    <option value="Molella">Molella</option>
+                    <option value="MEDUZA">MEDUZA</option>
+                    <option value="Matt Simons">Matt Simons</option>
+                    <option value="Ed Marquis">Ed Marquis</option>
+                    <option value="Brando">Brando</option>
+                    <option value="Glaceo">Glaceo</option>
+                    <option value="Kharfi">Kharfi</option>
+                    <option value="Lost Frequencies">Lost Frequencies</option>
+                    <option value="Dua Lipa">Dua Lipa</option>
+                    <option value="Steve Void">Steve Void</option>
+                    <option value="PNAU">PNAU</option>
+                    <option value="Mike Perry">Mike Perry</option>
+                    <option value="FAULHABER">FAULHABER</option>
+                    <option value="Audien">Audien</option>
+                    <option value="Prince Paris">Prince Paris</option>
+                    <option value="Georgia Ku">Georgia Ku</option>
+                    <option value="Icarus">Icarus</option>
+                    <option value="Madison Mars">Madison Mars</option>
+                    <option value="Nahaze">Nahaze</option>
+                    <option value="DJ Ross">DJ Ross</option>
+                    <option value="Other">Other (Enter below)</option>
+                </select>
+                
+                <label for="other_artist">If "Other" selected, please enter the artist name:</label>
+                <input type="text" id="other_artist" name="other_artist" placeholder="Enter artist name" disabled>
+            </div>
+            
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        <script>
+            document.getElementById('artist').addEventListener('change', function() {
+                var otherInput = document.getElementById('other_artist');
+                if (this.value === 'Other') {
+                    otherInput.disabled = false;
+                    otherInput.focus();
+                } else {
+                    otherInput.disabled = true;
+                    otherInput.value = '';
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
